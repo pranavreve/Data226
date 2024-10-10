@@ -18,13 +18,5 @@ You will need the following dependencies installed on your system:
 - Apache Airflow
 - Snowflake account
 - Alpha Vantage API Key
-- Required Python packages (see below)
+- Required Python packages
 
-## Setup Instructions
-
-### Step 1: Install Apache Airflow
-
-First, install Apache Airflow if it's not already installed. You can install it using `pip`:
-
-```bash
-pip install apache-airflow
