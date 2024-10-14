@@ -12,7 +12,8 @@ The goal of this lab is to develop a system that:
 
 ## System Architecture
 
-![System Architecture Diagram](path_to_image/diagram.png)
+![System Architecture Diagram](https://github.com/pranavreve/Data226/blob/Lab-1/diagram.png)
+
 
 The system consists of:
 1. **Alpha Vantage API**: Fetches daily stock price data.
