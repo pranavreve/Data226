@@ -12,7 +12,7 @@ The goal of this lab is to develop a system that:
 
 ## System Architecture
 
-![System Architecture Diagram](path_to_your_diagram.png)
+![System Architecture Diagram](path_to_image/diagram.png)
 
 The system consists of:
 1. **Alpha Vantage API**: Fetches daily stock price data.
@@ -44,9 +44,3 @@ The stock data is stored in a Snowflake table with the following structure:
 - **Alpha Vantage API Key** (get it from [Alpha Vantage](https://www.alphavantage.co/support/#api-key))
 - **Snowflake Hook** setup in Airflow for connection
 
-### Installation
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/stock-price-prediction.git
-   cd stock-price-prediction
