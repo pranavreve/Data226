@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: DEV
+    schema: RAW_DATA
+    tables:
+      - name: user_session_channel
+      - name: session_timestamp
+
+models:
+  - name: session_summary
+    columns:
+      - name: sessionId
+        tests:
+          - not_null
+          - unique
