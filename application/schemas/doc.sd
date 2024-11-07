@@ -1,0 +1,52 @@
+schema doc {
+    document doc {
+        field doc_id type string {
+            indexing: summary | attribute
+        }
+        field title type string {
+            indexing: summary | index
+            index: enable-bm25
+        }
+        field text type string {
+            indexing: summary | index
+            index: enable-bm25
+        }
+        field embedding type tensor<float>(x[384]) {
+            indexing: summary | attribute
+        }
+    }
+    
+    fieldset default {
+        fields: title, text
+    }
+    
+    rank-profile default {
+        first-phase {
+            expression: nativeRank(title) + nativeRank(text)
+        }
+    }
+
+    rank-profile bm25 inherits default {
+        first-phase {
+            expression: bm25(title) + bm25(text)
+        }
+    }
+
+    rank-profile semantic inherits default {
+        first-phase {
+            expression: closeness(embedding)
+        }
+        function query_embedding() {
+            expression: "tensor<float>(x[384])"
+        }
+    }
+
+    rank-profile recommendation inherits semantic {
+        first-phase {
+            expression: closeness(embedding)
+        }
+        function query_embedding() {
+            expression: "tensor<float>(x[384])"
+        }
+    }
+}
